@@ -4,47 +4,53 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MatrizDimensoes {
-    public static void main(String[] args) {
+    public static <matriz> void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        ArrayList<Integer> numerosPares = new ArrayList<>();
-        ArrayList<Integer> numerosImpares = new ArrayList<>();
+        int[][] matriz = new int[4][6];
 
-        int matriz[][] = new int[4][6];
+        ArrayList numerosPares = new ArrayList();
+        ArrayList numerosImpares = new ArrayList();
 
-        for (int i = 0; i < 4 ; i++) {
-            System.out.print("Digite o valor da linha [" + i + "]: ");
-            matriz[i][0] = input.nextInt();
+        //pedindo para informar os valores da linha 1
+        for (int i = 0; i < 6; i++) {
+            System.out.println("Digite um numero para a linha "+ (i+1));
+            matriz[0][i] = input.nextInt();
         }
 
-        for (int i = 0; i < 4; i++){
-            matriz[i][1] = matriz[3-i][0];
+        // adicionando os valores inveros da linha 1 na linha 2
+        for (int i = 0; i < 6; i++) {
+            matriz[1][i] =  matriz[0][5-i];
         }
 
-        for (int i = 0; i < 4; i++) {
-            matriz[i][2] = matriz[i][0] + matriz[i][1];
+        //adicionando os valores da linha 1 e 2 na linha 3
+        for (int i = 0; i < 6; i++) {
+            matriz[2][i] = matriz[1][i] + matriz[0][i];
         }
 
-        for (int i = 0; i < 4; i++) {
-            if (matriz[i][0]%2 == 0){
-                numerosPares.add(matriz[i][0]);
+        // achar os numeros pares e impares e adicionar no ArrayList
+        for (int i = 0; i < 6; i++) {
+            if (matriz[0][i] %2== 0){
+                numerosPares.add(matriz[0][i]);
+            }else {
+                numerosImpares.add(matriz[0][i]);
             }
         }
 
-        for (int i = 0; i < 4; i++) {
-            if (matriz[i][0]%2 != 0){
-                numerosImpares.add(matriz[i][0]);
-            }
+        // adicionar na quarta linha os valore, primeiro pares depois impares
+        for (int i = 0; i < numerosPares.size(); i++) {
+            matriz[3][i] = (int) numerosPares.get(i);
+        }
+        for (int i = 0; i < numerosImpares.size(); i++) {
+            matriz[3][i+numerosPares.size()] = (int) numerosImpares.get(i);
         }
 
-        for (int i = 0; i < 4; i++) {
-
-            for (int j = 0; j < numerosPares.size(); j++) {
-
-                // FINALIZAR
-
+        // mostrando a matriz
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                System.out.print(matriz[i][j] + "\t");
             }
-
+            System.out.println();
         }
     }
 }
