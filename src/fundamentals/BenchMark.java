@@ -207,7 +207,7 @@ public class BenchMark {
                 maiorDesempenho = desempenho.get(i);
             }
         }
-        System.out.printf("A linguagem com maior desempenho é %s com a pontução %.3f%n",linguagem[numeroDaLinguagemComMaisDesempenho] , maiorDesempenho);
+        System.out.printf("A linguagem coporm maior desempenho é %s com a pontução %.3f%n",linguagem[numeroDaLinguagemComMaisDesempenho] , maiorDesempenho);
 
         System.out.println("\nD) Nome da linguagem com o menor número de linhas---------------------");
         int menorNumeroDeLinhas= 1000;
