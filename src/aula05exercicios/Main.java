@@ -35,5 +35,26 @@ public class Main {
         brasil.paisesFronteirasEmComum(argentina);
 
         argentina.paisesFronteirasEmComum(uruguai);
+
+        Continente americaDoSul = new Continente("América do Sul");
+        americaDoSul.adicionarPaisNoContinente(brasil);
+        americaDoSul.adicionarPaisNoContinente(argentina);
+        americaDoSul.adicionarPaisNoContinente(uruguai);
+        System.out.println();
+        System.out.println("Dimensão total do continente é de "+ americaDoSul.dimensaoDoContinente()+" Km2");
+        System.out.println("A População total do continente é de "+ americaDoSul.populacaoDoContinente() +" pessoas");
+        americaDoSul.densidadePopulacionalDoContinente();
+        System.out.println();
+
+        System.out.println("O pais mais populoso do continente: "+americaDoSul.paisComMaiorPopulacao()+" com "+americaDoSul.paisComMaiorPopulacao().getPopulacao()+" habitantes");
+        System.out.println("O pais menos populoso do continente: "+americaDoSul.paisComMenorPopulacao()+" com "+americaDoSul.paisComMenorPopulacao().getPopulacao()+" habitantes");
+
+        System.out.println();
+        System.out.println("O pais a maior dimensao territorial do continente: "+americaDoSul.paisComMaiorDimensao()+" com "+americaDoSul.paisComMaiorDimensao().getDimensao()+" Km2");
+        System.out.println("O pais a menor dimensao territorial do continente: "+americaDoSul.paisComMenorDimensao()+" com "+americaDoSul.paisComMenorDimensao().getDimensao()+" Km2");
+        System.out.println();
+        System.out.printf("A razao dos dois paises Maior e Menor é de %.2f Km2",americaDoSul.razaoTerritorialMaiorEMenor());
+
+
     }
 }

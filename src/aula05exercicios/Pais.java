@@ -100,4 +100,10 @@ public class Pais {
         }
         System.out.println(getNome()+" e "+pais.getNome()+" tem os paises em comum: "+ listaDosPaisesEmComum);
     }
+
+
+    @Override
+    public String toString() {
+        return nome;
+    }
 }
