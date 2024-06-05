@@ -19,10 +19,6 @@ public class Material {
         return codigoNumerico;
     }
 
-    public void setCodigoNumerico(Integer codigoNumerico) {
-        this.codigoNumerico = codigoNumerico;
-    }
-
     public String getNomeMaterial() {
         return nomeMaterial;
     }
